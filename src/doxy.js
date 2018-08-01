@@ -1,2 +1,8 @@
 export { Button, TextLink } from "./buttons";
-export { default as Text } from "./typography";
+export {
+  Heading,
+  PlainText,
+  SecondaryText,
+  TertiaryText,
+  Footnote
+} from "./typography";
