@@ -1,107 +1,56 @@
-import React, { Component } from "react";
+import React from "react";
 import { Platform, StyleSheet, Text } from "react-native-web"; // TODO: convert to `react-native`
+import systemFontFamily from "./systemfontfamily";
+import omit from "lodash.omit"; // _.omit because microbundle does not support destructuring assignment
 
 import * as colors from "./colors";
 
-export class Heading extends Component {
-  render() {
-    var level = styles.heading1;
-
-    switch (this.props.level) {
-      case 2:
-        level = styles.heading2;
-        break;
-      case 3:
-        level = styles.heading3;
-        break;
-      case 4:
-        level = styles.heading4;
-        break;
-      default:
-    }
-    if (this.props.level === 4) {
-      return (
-        <Text
-          style={[styles.global, level, this.props.style]}
-          numberOfLines={this.props.numberOfLines}
-          onPress={this.props.onPress}
-        >
-          {this.props.children.toUpperCase()}
-        </Text>
-      );
-    } else {
-      return (
-        <Text
-          style={[styles.global, level, this.props.style]}
-          numberOfLines={this.props.numberOfLines}
-          onPress={this.props.onPress}
-        >
-          {this.props.children}
-        </Text>
-      );
-    }
-  }
+export function Heading(props) {
+  // WARNING: prop order matters.
+  //          destructuring assignment not supported by microbundle
+  return (
+    <Text
+      {...omit(props, ["level"])}
+      style={[styles.global, styles[`heading${props.level}`], props.style]}
+    >
+      {props.level === 4 ? props.children.toUpperCase() : props.children}
+    </Text>
+  );
 }
 
-export class PlainText extends Component {
-  render() {
-    return (
-      <Text
-        style={[styles.global, styles.plain, this.props.style]}
-        numberOfLines={this.props.numberOfLines}
-        onPress={this.props.onPress}
-      >
-        {this.props.children}
-      </Text>
-    );
-  }
+export function PlainText(props) {
+  // WARNING: prop order matters.
+  //          destructuring assignment not supported by microbundle
+  return <Text {...props} style={[styles.global, styles.plain, props.style]} />;
 }
 
-export class SecondaryText extends Component {
-  render() {
-    return (
-      <Text
-        style={[styles.global, styles.secondary, this.props.style]}
-        numberOfLines={this.props.numberOfLines}
-        onPress={this.props.onPress}
-      >
-        {this.props.children}
-      </Text>
-    );
-  }
+export function SecondaryText(props) {
+  // WARNING: prop order matters.
+  //          destructuring assignment not supported by microbundle
+  return (
+    <Text {...props} style={[styles.global, styles.secondary, props.style]} />
+  );
 }
 
-export class TertiaryText extends Component {
-  render() {
-    return (
-      <Text
-        style={[styles.global, styles.tertiary, this.props.style]}
-        numberOfLines={this.props.numberOfLines}
-        onPress={this.props.onPress}
-      >
-        {this.props.children}
-      </Text>
-    );
-  }
+export function TertiaryText(props) {
+  // WARNING: prop order matters.
+  //          destructuring assignment not supported by microbundle
+  return (
+    <Text {...props} style={[styles.global, styles.tertiary, props.style]} />
+  );
 }
 
-export class Footnote extends Component {
-  render() {
-    return (
-      <Text
-        style={[styles.global, styles.footnote, this.props.style]}
-        numberOfLines={this.props.numberOfLines}
-        onPress={this.props.onPress}
-      >
-        {this.props.children}
-      </Text>
-    );
-  }
+export function Footnote(props) {
+  // WARNING: prop order matters.
+  //          destructuring assignment not supported by microbundle
+  return (
+    <Text {...props} style={[styles.global, styles.footnote, props.style]} />
+  );
 }
 
 const styles = StyleSheet.create({
   global: {
-    fontFamily: Platform.OS === "ios" ? "System" : "normal"
+    fontFamily: systemFontFamily(Platform.OS)
   },
   heading1: {
     color: colors.gray900,
@@ -131,13 +80,13 @@ const styles = StyleSheet.create({
     color: colors.gray800,
     fontWeight: "400",
     fontSize: 16,
-    lineHeight: Platform.OS === "ios" ? 22 : 24
+    lineHeight: 24
   },
   secondary: {
     color: colors.gray800,
     fontWeight: "400",
     fontSize: 15,
-    lineHeight: Platform.OS === "ios" ? 22 : 24
+    lineHeight: 24
   },
   tertiary: {
     color: colors.gray800,

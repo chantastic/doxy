@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/churchcenter/doxy#readme",
   "dependencies": {
+    "lodash.omit": "^4.5.0",
     "react": "^16.4.1",
     "react-native-web": "^0.8.9"
   },
