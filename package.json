@@ -23,12 +23,12 @@
   "homepage": "https://github.com/churchcenter/doxy#readme",
   "dependencies": {
     "lodash.omit": "^4.5.0",
-    "react": "^16.4.1",
-    "react-native": "^0.56.0",
-    "react-native-web": "^0.8.9"
+    "react": "^16.4.1"
   },
   "devDependencies": {
     "microbundle": "^0.6.0",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "react-native": "^0.56.0",
+    "react-native-web": "^0.8.9"
   }
 }
