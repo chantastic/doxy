@@ -1,6 +1,6 @@
 {
   "name": "@churchcenter/doxy",
-  "version": "0.0.1-0",
+  "version": "0.0.1-1",
   "description": "Cross-platform Church Center Components",
   "main": "dist/doxy.js",
   "umd:main": "dist/doxy.umd.js",
