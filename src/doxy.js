@@ -1,4 +1,4 @@
-export { Button, TextLink } from "./buttons";
+export { default as TextLink } from "./text_link";
 export {
   Heading,
   PlainText,
