@@ -8,7 +8,7 @@
   "source": "src/doxy.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "microbundle",
+    "build": "microbundle --jsx React.createElement",
     "dev": "microbundle watch"
   },
   "repository": {
