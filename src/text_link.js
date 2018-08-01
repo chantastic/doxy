@@ -1,5 +1,5 @@
 import React from "react";
-import { Platform, StyleSheet, Text } from "react-native-web"; // TODO: convert to `react-native`
+import { Platform, StyleSheet, Text } from "react-native"; // TODO: convert to `react-native`
 import systemFontFamily from "./systemfontfamily";
 import * as colors from "./colors";
 
