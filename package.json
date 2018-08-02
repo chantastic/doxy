@@ -17,6 +17,9 @@
   },
   "author": "Michael Chan <mijoch@gmail.com>",
   "license": "UNLICENSED",
+  "files": [
+    "dist"
+  ],
   "bugs": {
     "url": "https://github.com/churchcenter/doxy/issues"
   },
