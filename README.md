@@ -80,6 +80,9 @@ In our next effort, I'd like to see if we can export the simpler buttons first.
 * Continue developing Josh's [CSS Doxy clone](https://github.com/ministrycentered/giving/blob/master/app/assets/stylesheets/church_center/views/_ccapp.scss) for web apps.
 * Wait for [api.churchcenter.com](api.churchcenter.com/) to be developed as a first-class backend for Doxy components.
 
+### Links
+* [Closed ChurchCenterApp PR](https://github.com/ministrycentered/ChurchCenterApp/pull/158)
+
 ---
 
 # doxy
